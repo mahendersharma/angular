@@ -1,0 +1,33 @@
+<h1>parents</h1>
+<!-- key up base pe -->
+<!-- parents components <input type="text" #Pcomponents (keyup)="0">
+<app-childs [pdata]="Pcomponents.value"></app-childs> -->
+
+
+<!-- button base -->
+
+<!-- parents components <input type="text" #Pcomponents >
+<button (click)="0">send</button>
+
+<app-childs [pdata]="Pcomponents.value"></app-childs> -->
+
+<!-- check box -->
+<!-- Agree : <input type="checkbox" #Pcomponents (change)="0" checked/>
+<app-childs [pdata]="Pcomponents.checked"></app-childs> -->
+
+
+<!-- FirstName: <input type="text" #Pcomponents1 />
+LastName:  <input type="text" #Pcomponents2 />
+<button (click)="0">Send</button>
+<app-childs [pdata1]="Pcomponents1.value" [pdata2]="Pcomponents2.value"></app-childs>  -->
+
+
+
+
+FirstName: <input type="text" #Pcomponents1 />
+LastName:  <input type="text" #Pcomponents2 />
+<button (click)="senddata(Pcomponents1.value,Pcomponents2.value)">Send</button>
+<app-childs [pdata1]="Fullname"></app-childs> 
+
+
+

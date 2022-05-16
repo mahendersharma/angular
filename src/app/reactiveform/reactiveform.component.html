@@ -1,0 +1,57 @@
+<h1>reactiveform works!</h1>
+<form [formGroup]="regForm" (ngSubmit)="register()">
+    <div>
+        name <input type="text" placeholder="name"  formControlName="name"/>
+        <div *ngIf="regForm.controls['name'].touched && !regForm.controls['name'].valid">
+            <span *ngIf="regForm.controls['name'].hasError('required')">
+                first name is requied
+            </span>
+            <span *ngIf="regForm.controls['name'].hasError('minlength')">
+                first name is requied minLength 5
+            </span>
+            <span *ngIf="regForm.controls['name'].hasError('maxlength')">
+                first name is requied minLength 10
+            </span>
+            </div>
+    </div>
+    <div>
+       last name <input type="text" placeholder="lastname"  formControlName="lastname"/>
+       <div *ngIf="regForm.controls['lastname'].touched && !regForm.controls['lastname'].valid">
+        <span *ngIf="regForm.controls['lastname'].hasError('required')">
+            lastname name is requied
+        </span>
+        <span *ngIf="regForm.controls['lastname'].hasError('minlength')">
+            lastname is requied minLength 5
+        </span>
+        <span *ngIf="regForm.controls['lastname'].hasError('maxlength')">
+            lastname is requied minLength 10
+        </span>
+        </div>
+    </div>
+
+    <div>
+        email <input type="email" placeholder="email"  formControlName="email"/>
+        <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">email is requied</div>
+
+    </div>
+    <div formArrayName="phone">
+        <div *ngFor="let mobileno of regForm.get('phone').controls;  index as idx">
+            phone <input type="number" placeholder="phone"  [formControlName]="idx"/>
+            <button (click)="deleterow(idx)">delete</button>
+
+        </div>
+        <button (click)="addmore()">Add More</button>
+
+        <div *ngIf="regForm.controls['phone'].touched && !regForm.controls['phone'].valid">phone is requied</div>
+
+
+    </div>
+    <div><button type="submit"> submit</button> 
+        <button type="reset">reset</button> 
+        <button (click)="resat2()">resat2</button>
+        <button (click)="fillform()">setvalue</button>
+        <button (click)="patchvalue()">patchvalue</button>
+
+
+    </div>
+</form>

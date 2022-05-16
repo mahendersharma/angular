@@ -1,0 +1,12 @@
+h1{
+    background-color: rgb(14, 37, 167);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+button{
+    color:brown;
+    background-color: burlywood;
+    height: 40px;
+    width: 80px;
+}

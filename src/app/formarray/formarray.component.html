@@ -1,0 +1,23 @@
+<h1>form arry</h1>
+<form [formGroup]="userform" (ngSubmit)="onformsubmit()">
+    <div>
+        first name <input type="text" placeholder="first name" formControlName="fname">
+        <span *ngIf="userform.get('fname').invalid">reQuired</span>
+    </div>
+    <div>
+        last name <input type="text" placeholder="first name" formControlName="flast">
+        <span *ngIf="userform.get('flast').invalid">reQuired</span>
+    </div>
+    <div formGroupName="data">
+        <div>
+            email <input type="text" placeholder="first name" formControlName="email">
+            <span *ngIf="userform.get('data').get('email').invalid">reQuired</span>
+        </div>
+        <div>
+            phone <input type="text" placeholder="first name" formControlName="phone">
+            <span *ngIf="userform.get('data').get('phone').invalid">reQuired</span>
+        </div>
+    </div>
+  
+    <div><button type="submit">sumbit</button></div>
+</form>

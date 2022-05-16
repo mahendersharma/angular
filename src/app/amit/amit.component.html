@@ -1,0 +1,16 @@
+<p>amit works!</p>
+<h1>amit compent pages </h1>
+<button (click)="goemp()">goemp</button>
+<table>
+    <h1>{{users.data.resident_data.total_no_of_resident}}</h1>
+    <tr *ngFor="let amot of users.data.resident_data.array_of_all_residents">
+        <td>{{amot.first_name}}</td>
+        <td>{{amot.address_in_society}}</td>
+
+        <td>{{amot.email}}</td>
+
+        <td>{{amot.mobile}}</td>
+
+
+    </tr>
+</table>
